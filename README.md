@@ -19,6 +19,10 @@ Learning from imbalanced datasets is challenging for standard classification alg
 
 We welcome new contributors of all experience levels.
 
+## Current implementation
+
+The current implementation is a quick prototype (and therefore very low code quality) of random oversampling (random.R) , SMOTE (smote.R) and SOMO (somo.R). There is also a function that compares the results of these oversampling algorithms (eval.R).  
+
 ## References
 
 N.V. Chawla, N. Japkowicz, and A. Kolcz. 2003. “Workshop Learning from Imbalanced Data Sets II.” Proc. Int’l Conf. Machine Learning.
