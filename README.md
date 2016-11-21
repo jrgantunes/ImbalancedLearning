@@ -21,7 +21,7 @@ We welcome new contributors of all experience levels.
 
 ## Current implementation
 
-The current implementation is a quick prototype (and therefore very low code quality) of random oversampling (random.R) , SMOTE (smote.R) and SOMO (somo.R). There is also a function that compares the results of these oversampling algorithms (eval.R).  
+The current implementation is a quick prototype (and therefore the quality of code is very low) of random oversampling (random.R) , SMOTE (smote.R) and SOMO (somo.R). There is also a function that compares the results of these oversampling algorithms (eval.R).  
 
 ## References
 
