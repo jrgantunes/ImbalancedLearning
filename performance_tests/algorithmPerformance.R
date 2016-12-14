@@ -5,7 +5,7 @@ library(FNN)
 library(microbenchmark)
 
 # Functions to generate data
-generateSequentialData <- function(numSamples, numFeatures, numQueries, randomSeed) {
+genSeqData <- function(numSamples, numFeatures, numQueries, randomSeed) {
   
   # Generates a matrix and a random query index. Every row of the 
   # matrix is a vector of dimension equal to numFeatures and a
