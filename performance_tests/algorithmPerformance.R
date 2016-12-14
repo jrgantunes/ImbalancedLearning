@@ -5,7 +5,7 @@ library(FNN)
 library(microbenchmark)
 
 # Functions to generate data
-generateSequentialData <- function(numSamples, numFeatures, randomSeed) {
+generateSequentialData <- function(numSamples, numFeatures, numQueries, randomSeed) {
   
   # Generates a matrix and a random query index. Every row of the 
   # matrix is a vector of dimension equal to numFeatures and a
@@ -24,10 +24,12 @@ generateSequentialData <- function(numSamples, numFeatures, randomSeed) {
   
   set.seed((randomSeed))
   inputMatrix <- matrix(rep(1:numSamples), numFeatures, nrow = numSamples)
-  shuffledIndices <- sample(nrow(inputMatrix))
-  queryIndex <- sample(nrow(inputMatrix), 1)
+  
+  shuffledIndices <- sample(numSamples)
   inputMatrix <- inputMatrix[shuffledIndices, ]
-  return(list(inputMatrix = inputMatrix, queryIndex = queryIndex))
+  
+  queriesIndices <- sample(numSamples, numQueries)
+  queriesMatrix <- inputMatrix[queriesIndices, , drop = FALSE]
+  
+  return(list(inputMatrix = inputMatrix, queriesMatrix = queriesMatrix))
 }
-
-# Functions to time nearest neighbours algorithm
