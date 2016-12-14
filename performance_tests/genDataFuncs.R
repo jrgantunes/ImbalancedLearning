@@ -3,7 +3,7 @@
 # Functions to generate data
 genSeqData <- function(numSamples, numFeatures, numQueries, randomSeed) {
   
-  # Generates a matrix and a random query index. Every row of the 
+  # Generates a matrix and random queries indices. Every row of the 
   # matrix is a vector of dimension equal to numFeatures and a
   # constant value equal to the row number. The matrix rows are
   # shuffled such that the performance results of the nearest
@@ -13,6 +13,7 @@ genSeqData <- function(numSamples, numFeatures, numQueries, randomSeed) {
   # Args:
   #   numSamples: The number of rows for the generated matrix.
   #   numFeatures: The number of columns for the generated matrix.
+  #   numQueries: the number of rows of the query matrix.
   #   randomSeed: The random state used in sample functions.
   #
   # Returns:
