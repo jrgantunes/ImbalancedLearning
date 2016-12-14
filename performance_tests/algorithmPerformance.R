@@ -22,14 +22,19 @@ generateSequentialData <- function(numSamples, numFeatures, numQueries, randomSe
   # Returns:
   #   A list which contains the inputMateix and an index for the query sample.
   
+  # Set random state
   set.seed((randomSeed))
+  
+  # Create sequential matrix
   inputMatrix <- matrix(rep(1:numSamples), numFeatures, nrow = numSamples)
   
+  # Shuffle matrix rows
   shuffledIndices <- sample(numSamples)
   inputMatrix <- inputMatrix[shuffledIndices, ]
   
+  # Choose a random query matrix
   queriesIndices <- sample(numSamples, numQueries)
-  queriesMatrix <- inputMatrix[queriesIndices, , drop = FALSE]
+  queryMatrix <- inputMatrix[queriesIndices, , drop = FALSE]
   
-  return(list(inputMatrix = inputMatrix, queriesMatrix = queriesMatrix))
+  return(list(inputMatrix = inputMatrix, queryMatrix = queryMatrix))
 }
