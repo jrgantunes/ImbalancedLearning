@@ -38,3 +38,9 @@ genSeqData <- function(numSamples, numFeatures, numQueries, randomSeed) {
   
   return(list(inputMatrix = inputMatrix, queryMatrix = queryMatrix))
 }
+
+# Function to time nearest neighbours algorithm
+timeAlgorithm <- function(inputMatrix, queryMatrix, k, knnFunction, numEvaluations, ...) {
+  timingResults <- microbenchmark(knnFunction(inputMatrix, query, k, ...), times = numEvaluations, unit = "s")
+  return(timingResults)
+}
