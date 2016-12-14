@@ -1,9 +1,5 @@
 # Functions to generate data and time nearest neighbours algorithms
 
-# Load packages
-library(FNN)
-library(microbenchmark)
-
 # Functions to generate data
 genSeqData <- function(numSamples, numFeatures, numQueries, randomSeed) {
   
@@ -37,10 +33,4 @@ genSeqData <- function(numSamples, numFeatures, numQueries, randomSeed) {
   queryMatrix <- inputMatrix[queriesIndices, , drop = FALSE]
   
   return(list(inputMatrix = inputMatrix, queryMatrix = queryMatrix))
-}
-
-# Function to time nearest neighbours algorithm
-timeAlgorithm <- function(inputMatrix, queryMatrix, k, knnFunction, numEvaluations, ...) {
-  timingResults <- microbenchmark(knnFunction(inputMatrix, query, k, ...), times = numEvaluations, unit = "s")
-  return(timingResults)
 }
