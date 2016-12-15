@@ -17,7 +17,7 @@ genSeqData <- function(numSamples, numFeatures, numQueries, randomSeed) {
   #   randomSeed: The random state used in sample functions.
   #
   # Returns:
-  #   A list which contains the inputMateix and an index for the query sample.
+  #   A list which contains the inputMatrix and the queryMatrix.
   
   # Set random state
   set.seed((randomSeed))
